@@ -1,0 +1,13 @@
+{
+  "name": "p1-student-grade-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app-cli.js",
+  "scripts": {
+    "test": "node app-cli.js --name \"Deepa\" --math 90 --science 80 --english 70"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
