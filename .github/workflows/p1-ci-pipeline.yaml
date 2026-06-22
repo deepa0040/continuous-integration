@@ -1,0 +1,28 @@
+name: p1-student-grade-calculator-ci-pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Step 1: Check out your repository code
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.15.0'
+          # Optional: Enable caching for faster dependency resolution (npm, yarn, or pnpm)
+          cache: 'npm' 
+
+    # Step 3: Verify and execute your project scripts
+      - name: Install dependencies and test
+        run: |
+          node -v
+          npm ci
+          npm test
