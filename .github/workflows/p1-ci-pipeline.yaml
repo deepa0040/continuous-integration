@@ -8,6 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: project/nodejs-project/p1-student-grade-calculator
+
     steps:
     # Step 1: Check out your repository code
       - name: Checkout code
@@ -18,7 +23,8 @@ jobs:
         with:
           node-version: '24.15.0'
           # Optional: Enable caching for faster dependency resolution (npm, yarn, or pnpm)
-          cache: 'npm' 
+          cache: 'npm'
+          cache-dependency-path: project/nodejs-project/p1-student-grade-calculator/package-lock.json 
 
     # Step 3: Verify and execute your project scripts
       - name: Install dependencies and test
